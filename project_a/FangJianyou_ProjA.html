@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>FangJianyou_ProjA</title>
+  <link href="FangJianyou_ProjA.css" rel="stylesheet" />
+</head>
+
+<body onload="main()">
+  <h1>Walking Creatures</h1>
+  <div class="content">
+    <div class="side">
+      <ul>
+        <li>On the canvas are a crawling spider and a mysterious walking creature(we call it MWC).</li>
+        <li>Drag your mouse on the canvas to change spider's posture.</li>
+        <li>Hold z key and drag mouse to change MWC's posture</li>
+        <li>Click your mouse anywhere on the canvas to let MWC go to where you click.</li>
+        <li>Hit space to pause motion</li>
+        <li>Use arrow keys to move MWC</li>
+      </ul>
+    </div>
+    <div class="canvas">
+      <canvas id="webgl" width="400" height="400">
+        Please use a browser that supports "canvas"
+      </canvas>
+      <p id="speedtext">
+        Walking Speed: 1x
+      </p>
+      <p id="position">
+        MWC position: (0,0)
+      </p>
+    </div>
+    <div class="side">
+      <div>
+        <h4>Speed multiplier</h4>
+        <input value="1" id="speed"></input>
+        <button onclick="changeSpeed()">Apply</button>
+      </div>
+      <h4>Background Color</h4>
+      <div>
+        <div class="label">Red</div>
+        <input type="range" min="0" max="255" value="0" oninput="changeR(this.value)" onchange="changeR(this.value)"></input>
+        <span id="red">0</span>
+      </div>
+      <div>
+        <div class="label">Green</div>
+        <input type="range" min="0" max="255" value="0" oninput="changeG(this.value)" onchange="changeG(this.value)"></input>
+        <span id="green">0</span>
+      </div>
+      <div>
+        <div class="label">Blue</div>
+        <input type="range" min="0" max="255" value="0" oninput="changeB(this.value)" onchange="changeB(this.value)"></input>
+        <span id="blue">0</span>
+      </div>
+      <div>
+        <div class="label">Alpha</div>
+        <input type="range" min="0" max="100" value="100" oninput="changeA(this.value)" onchange="changeA(this.value)"></input>
+        <span id="alpha">100%</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="lib/webgl-utils.js"></script>
+  <script src="lib/webgl-debug.js"></script>
+  <script src="lib/cuon-utils.js"></script>
+  <script src="lib/cuon-matrix-mod.js"></script>
+  <script src="FangJianyou_ProjA.js"></script>
+</body>
+
+</html>

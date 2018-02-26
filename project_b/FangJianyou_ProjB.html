@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>FangJianyou_ProjB</title>
+</head>
+
+<body onload="main()" onresize="drawResize()">
+  <canvas id="webgl" width="400" height="400">
+<!-- NOTE:  We don't use these initial 'width' and 'height' settings at all,
+		because
+		our 'main()' function immediately calls the winResize() function,
+		which adjusts canvas width,height to fill the browser window.
+-->
+    Please use a browser that supports "canvas"
+    </canvas>
+
+  <!-- <div id="frame">
+    Running at 60 FPS
+  </div> -->
+  <button onclick="onPauseClicked()">Pause/Play</button>
+  <button onclick="switchCamera()">Switch camera</button>
+  <button onclick="applyOrthoFrustum()">Apply Ortho Frustum</button>
+  <button onclick="applyPerspectiveFrustum()">Apply Perspective Frustum</button>
+  <div>
+    Ortho_Left<input value="0" id="left"></input>
+    Ortho_Right<input value="0" id="right"></input>
+    Perspective_fovy<input value="35" id="yfov"></input>
+  </div>
+  <div>
+    Ortho_Bottom<input value="0" id="bottom"></input>
+    Ortho_Top<input value="0" id="top"></input>
+    Perspective_Near<input value="0" id="pnear"></input>
+  </div>
+  <div>
+    Ortho_Near<input value="0" id="near"></input>
+    Ortho_Far<input value="0" id="far"></input>
+    Perspective_Far<input value="0" id="pfar"></input>
+  </div>
+
+  <p>Use WSAD to yaw and roll. Use IKJL and ↑↓←→ to move horizontally and vertically. Use Y and H for zooming.</p>
+  <p>
+    Click switch camera above to change perspective camera. Order: Free camera => Train Head => End of Barrier looking towards -Y => End of Barrier looking towards +X
+  </p>
+
+  <script src="../lib/webgl-utils.js"></script>
+  <script src="../lib/webgl-debug.js"></script>
+  <script src="../lib/cuon-utils.js"></script>
+  <script src="../lib/cuon-matrix-quat.js"></script>
+  <script src="FangJianyou_ProjB.js"></script>
+</body>
+
+</html>
